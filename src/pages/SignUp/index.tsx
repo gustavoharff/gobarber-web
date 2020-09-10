@@ -18,6 +18,12 @@ import logoImg from '../../assets/logo.svg';
 
 import { Container, Content, AnimationContainer, Background } from './styles';
 
+interface SignUpFormData {
+  name: string;
+  email: string;
+  password: string;
+}
+
 const SignUp: React.FC = () => {
   const history = useHistory();
 
@@ -26,7 +32,7 @@ const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const handleSubmit = useCallback(
-    async (data: any) => {
+    async (data: SignUpFormData) => {
       try {
         formRef.current?.setErrors({});
 
