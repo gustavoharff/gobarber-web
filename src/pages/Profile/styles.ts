@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import { shade } from 'polished';
 
 export const Container = styled.div`
-  header {
+  > header {
     height: 144px;
     background: #28262e;
+
     display: flex;
     align-items: center;
 
@@ -65,7 +66,6 @@ export const Content = styled.div`
 export const AvatarInput = styled.div`
   margin-bottom: 32px;
   position: relative;
-  display: flex;
   align-self: center;
 
   img {
@@ -74,7 +74,7 @@ export const AvatarInput = styled.div`
     border-radius: 50%;
   }
 
-  button {
+  label {
     position: absolute;
     width: 48px;
     height: 48px;
@@ -84,10 +84,14 @@ export const AvatarInput = styled.div`
     bottom: 0;
     right: 0;
     transition: background-color 0.2s;
-
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    input {
+      display: none;
+    }
 
     svg {
       width: 20px;
